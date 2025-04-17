@@ -1,4 +1,4 @@
-package analise.semantica;
+package src.analise.semantica;
 
 public class Semantico {
 }
