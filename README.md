@@ -6,9 +6,15 @@ Uma linguagem de programação criada do zero como parte do projeto da disciplin
 
 - [x] Analisador Léxico
     - [ ] Token
+    - [ ] Lexer
 - [ ] Analisador Sintático
+    - [ ] Parser
 - [ ] Analisador Semântico
+    - [ ] ???
 - [ ] Gerador de Código
+    - [ ] Código-objeto
+    - [ ] Código-executável
+  
 
 ##  Como rodar o projeto
 
