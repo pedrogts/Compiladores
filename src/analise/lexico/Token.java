@@ -13,13 +13,13 @@ public class Token {
     this.linha = linha;
   }
 
+  @Override
   public String toString() {
-    var imprimirToken = "["
-            + linha + ", "
-            + "\"" + lexema + "\"" + ", "
-            + "<" + tipo + ">" + ", "
-            + literal + "]";
-
-    return imprimirToken;
+    return "["
+            + "linha: " + linha + ", "
+            + "lexema: \"" + lexema + "\", "
+            + "tipo: <" + tipo + ">, "
+             + "]";
   }
+
 }

@@ -23,3 +23,4 @@ public enum TiposToken {
   //Fim do lexema
   EOF
 }
+
