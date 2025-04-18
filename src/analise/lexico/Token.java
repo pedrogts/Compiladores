@@ -1,19 +1,25 @@
-package src.analise.lexico;
+package analise.lexico;
 
 public class Token {
-  final TokenType type;
-  final String lexeme;
+  final TiposToken tipo;
+  final String lexema;
   final Object literal;
-  final int line;
+  final int linha;
 
-  public Token(TokenType type, String lexeme, Object literal, int line) {
-    this.type = type;
-    this.lexeme = lexeme;
+  public Token(TiposToken tipo, String lexema, Object literal, int linha) {
+    this.tipo = tipo;
+    this.lexema = lexema;
     this.literal = literal;
-    this.line = line;
+    this.linha = linha;
   }
 
   public String toString() {
-    return type + " " + lexeme + " " + literal;
+    var imprimirToken = "["
+            + linha + ", "
+            + "\"" + lexema + "\"" + ", "
+            + "<" + tipo + ">" + ", "
+            + literal + "]";
+
+    return imprimirToken;
   }
 }
