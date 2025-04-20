@@ -13,7 +13,7 @@ public enum TiposToken {
     BARRA, BARRA_ASTERISCO,
 
     //Constantes
-    ID, DIGITOINT, DIGITODUP, INT, DUPLA_PRE, CARACTER, BOOLEANO,
+    ID, DIGITOINT, DIGITODUP, INT, DUP, CARACTER, BOOLEANO,
 
     //Palavras-reservadas
     E, SENAO, FALSO, PARA, SE, OU, METODO, VAZIO,
