@@ -38,6 +38,8 @@ public class Lexico {
         palavra_reservada.put("repita", TiposToken.REPITA);
     }
 
+    private List<Token> tokens = new ArrayList<>();
+
     public void defCodFonte(String fonte) {
         this.fonte = fonte;
         this.inicio = 0;
@@ -66,8 +68,6 @@ public class Lexico {
     }
 
     public List<Token> anLex() {
-        List<Token> tokens = new ArrayList<>();
-
         while (!terminou()) {
             inicio = atual;
             char c = avancar();
@@ -80,78 +80,110 @@ public class Lexico {
                 continue;
             }
 
-
             switch (c) {
                 case '(':
-                    addToken(TiposToken.PAR_ESQ, tokens);
+                    addToken(TiposToken.PAR_ESQ);
                     break;
                 case ')':
-                    addToken(TiposToken.PAR_DIR, tokens);
+                    addToken(TiposToken.PAR_DIR);
                     break;
                 case '{':
-                    addToken(TiposToken.PAR_ESQ, tokens);
+                    addToken(TiposToken.CHAVE_ESQ);
                     break;
                 case '}':
-                    addToken(TiposToken.PAR_DIR, tokens);
+                    addToken(TiposToken.CHAVE_DIR);
                     break;
                 case ',':
-                    addToken(TiposToken.VIRG, tokens);
+                    addToken(TiposToken.VIRG);
                     break;
                 case '.':
-                    addToken(TiposToken.PONTO, tokens);
+                    addToken(TiposToken.PONTO);
                     break;
                 case '-':
-                    addToken(TiposToken.MENOS, tokens);
+                    addToken(TiposToken.MENOS);
                     break;
                 case '+':
-                    addToken(TiposToken.MAIS, tokens);
+                    addToken(TiposToken.MAIS);
                     break;
                 case ';':
-                    addToken(TiposToken.PONT_VIRG, tokens);
+                    addToken(TiposToken.PONT_VIRG);
                     break;
                 case '*':
-                    addToken(TiposToken.MULTI, tokens);
+                    addToken(TiposToken.MULTI);
+                    break;
+                case '=':
+                    addToken(TiposToken.IGUAL);
                     break;
                 case '#':
-                    addToken(TiposToken.HASTAG, tokens);
+                    addToken(TiposToken.HASTAG);
                     break;
                 case ':':
-                    addToken(TiposToken.DOIS_PONTOS, tokens);
+                    addToken(TiposToken.DOIS_PONTOS);
                     break;
                 case '!':
-                    addToken(verificar('=') ? TiposToken.DIFERENTE : TiposToken.NOT, tokens);
+                    addToken(verificar('=') ? TiposToken.DIFERENTE : TiposToken.NOT);
                     break;
                 case '>':
-                    addToken(verificar('=') ? TiposToken.MAIOR_IGUAL : TiposToken.MAIOR, tokens);
+                    addToken(verificar('=') ? TiposToken.MAIOR_IGUAL : TiposToken.MAIOR);
                     break;
                 case '<':
                     if (verificar('<')) {
-                        addToken(TiposToken.ATRIBUICAO, tokens);
+                        addToken(TiposToken.ATRIBUICAO);
                     } else if (verificar('=')) {
-                        addToken(TiposToken.MENOR_IGUAL, tokens);
+                        addToken(TiposToken.MENOR_IGUAL);
                     } else {
-                        addToken(TiposToken.MENOR, tokens);
+                        addToken(TiposToken.MENOR);
                     }
                     break;
                 case '/':
-                    addToken(verificar('*') ? TiposToken.BARRA_ASTERISCO : TiposToken.BARRA, tokens);
+                    addToken(verificar('*') ? TiposToken.BARRA_ASTERISCO : TiposToken.BARRA);
                     break;
                 default:
-                    erro(c);
-                    break;
+                    if (Character.isDigit(c)) {
+                        numero();
+                    } else {
+                        erro(c);
+                    }
             }
         }
-         atual--;
-        addToken(TiposToken.EOF, "eof", tokens);
+        addToken(TiposToken.EOF);
         return tokens;
     }
 
-
-    private void addToken(TiposToken tipo, List<Token> tokens) {
-        addToken(tipo, null, tokens);
+    private boolean digito(char c) {
+        return Character.toString(c).matches("\\d");
     }
 
-    private void addToken(TiposToken tipo, Object literal, List<Token> tokens) {
+    private boolean alfabeto(char c) {
+        return Character.toString(c).matches("[A-Za-z]");
+    }
+
+    private void numero() {
+        while (digito(olhar())) avancar();
+
+        if (olhar() == '.' && digito(olharProx())) {
+            avancar();
+
+            while (digito(olhar())) {
+                avancar();
+            }
+
+            addToken(TiposToken.DIGITODUP, Double.parseDouble(fonte.substring(inicio, atual)));
+        } else {
+            addToken(TiposToken.DIGITOINT, Integer.parseInt(fonte.substring(inicio, atual)));
+        }
+    }
+
+    private char olharProx() {
+        if (atual + 1 >= fonte.length()) return '\0';
+        return fonte.charAt(atual + 1);
+    }
+
+    private void addToken(TiposToken tipo) {
+        addToken(tipo, null);
+    }
+
+    private void addToken(TiposToken tipo, Object literal) {
         String texto = fonte.substring(inicio, atual);
         tokens.add(new Token(tipo, texto, literal, linha));
     }
