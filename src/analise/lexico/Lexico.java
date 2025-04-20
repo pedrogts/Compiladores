@@ -36,6 +36,10 @@ public class Lexico {
         palavra_reservada.put("continue", TiposToken.CONTINUE);
         palavra_reservada.put("faca", TiposToken.FACA);
         palavra_reservada.put("repita", TiposToken.REPITA);
+        palavra_reservada.put("int", TiposToken.INT);
+        palavra_reservada.put("dup", TiposToken.DUP);
+        palavra_reservada.put("simbol", TiposToken.CARACTER);
+        palavra_reservada.put("booleano", TiposToken.BOOLEANO);
     }
 
     private List<Token> tokens = new ArrayList<>();
@@ -141,25 +145,33 @@ public class Lexico {
                 default:
                     if (Character.isDigit(c)) {
                         numero();
+                    } else if (id(c)) {
+                        identificador();
                     } else {
                         erro(c);
                     }
             }
         }
-        addToken(TiposToken.EOF);
+        tokens.add(new Token(TiposToken.EOF, "eof", "EOF", linha));
         return tokens;
     }
 
     private boolean digito(char c) {
         return Character.toString(c).matches("\\d");
     }
+//
+//    private boolean alfabeto(char c) {
+//        return Character.toString(c).matches("[A-Za-z][A-Za-z_]*");
+//    }
 
-    private boolean alfabeto(char c) {
-        return Character.toString(c).matches("[A-Za-z]");
+    private boolean id(char c) {
+        return Character.toString(c).matches("[A-Za-z_][A-Za-z0-9_]*");
     }
 
     private void numero() {
-        while (digito(olhar())) avancar();
+        while (digito(olhar())) {
+            avancar();
+        }
 
         if (olhar() == '.' && digito(olharProx())) {
             avancar();
@@ -173,6 +185,7 @@ public class Lexico {
             addToken(TiposToken.DIGITOINT, Integer.parseInt(fonte.substring(inicio, atual)));
         }
     }
+
 
     private char olharProx() {
         if (atual + 1 >= fonte.length()) return '\0';
@@ -195,4 +208,23 @@ public class Lexico {
         atual++;
         return true;
     }
+
+    private void identificador() {
+        while (id(olhar())) {
+            avancar();
+        }
+        String s = fonte.substring(inicio, atual);
+        TiposToken tipo;
+        tipo = palavra_reservada.get(s);
+        if (tipo == null) {
+            addToken(TiposToken.ID, s);
+        } else {
+            addToken(tipo, s);
+        }
+
+    }
+
 }
+
+
+
