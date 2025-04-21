@@ -1,4 +1,4 @@
-package analise.lexico;
+package src.analise.lexico;
 
 public enum TiposToken {
 

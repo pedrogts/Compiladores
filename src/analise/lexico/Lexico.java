@@ -1,4 +1,4 @@
-package analise.lexico;
+package src.analise.lexico;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -159,10 +159,6 @@ public class Lexico {
     private boolean digito(char c) {
         return Character.toString(c).matches("\\d");
     }
-//
-//    private boolean alfabeto(char c) {
-//        return Character.toString(c).matches("[A-Za-z][A-Za-z_]*");
-//    }
 
     private boolean id(char c) {
         return Character.toString(c).matches("[A-Za-z_][A-Za-z0-9_]*");
@@ -225,6 +221,3 @@ public class Lexico {
     }
 
 }
-
-
-
