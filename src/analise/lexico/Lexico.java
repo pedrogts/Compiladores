@@ -75,7 +75,7 @@ public class Lexico {
         while (!terminou()) {
             inicio = atual;
             char c = avancar();
-
+            
             if (c == ' ' || c == '\r' || c == '\t') {
                 continue;
             }
@@ -125,7 +125,7 @@ public class Lexico {
                     addToken(TiposToken.DOIS_PONTOS);
                     break;
                 case '!':
-                    addToken(verificar('=') ? TiposToken.DIFERENTE : TiposToken.NOT);
+                    addToken(verificar('>') ? TiposToken.DIFERENTE : TiposToken.NOT);
                     break;
                 case '>':
                     addToken(verificar('=') ? TiposToken.MAIOR_IGUAL : TiposToken.MAIOR);
@@ -143,7 +143,7 @@ public class Lexico {
                     addToken(verificar('*') ? TiposToken.BARRA_ASTERISCO : TiposToken.BARRA);
                     break;
                 default:
-                    if (Character.isDigit(c)) {
+                    if (digito(c)) {
                         numero();
                     } else if (id(c)) {
                         identificador();
@@ -161,7 +161,7 @@ public class Lexico {
     }
 
     private boolean id(char c) {
-        return Character.toString(c).matches("[A-Za-z_][A-Za-z0-9_]*");
+        return Character.toString(c).matches("[A-Za-z_][A-Za-z_0-9]*");
     }
 
     private void numero() {
@@ -176,9 +176,9 @@ public class Lexico {
                 avancar();
             }
 
-            addToken(TiposToken.DIGITODUP, Double.parseDouble(fonte.substring(inicio, atual)));
+            addToken(TiposToken.DIGITO_DUP, Double.parseDouble(fonte.substring(inicio, atual)));
         } else {
-            addToken(TiposToken.DIGITOINT, Integer.parseInt(fonte.substring(inicio, atual)));
+            addToken(TiposToken.DIGITO_INT, Integer.parseInt(fonte.substring(inicio, atual)));
         }
     }
 
@@ -206,7 +206,7 @@ public class Lexico {
     }
 
     private void identificador() {
-        while (id(olhar())) {
+        while (id(olhar()) || digito(olhar())) {
             avancar();
         }
         String s = fonte.substring(inicio, atual);
