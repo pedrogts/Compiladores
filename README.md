@@ -13,8 +13,8 @@ Uma linguagem de programação criada do zero como parte do projeto da disciplin
   - [x] Lexer
 
 - 🛠️ **Analisador Sintático**
-  - [x] Gramática
-  - [x] Parser
+  - [ ] Gramática
+  - [ ] Parser
 
 - 📐 **Analisador Semântico**
   - [ ] Em desenvolvimento...
