@@ -1,10 +1,10 @@
-package src.analise.lexico;
+package analise.lexico;
 
 public class Token {
-    final TiposToken tipo;
-    final String lexema;
-    final Object literal;
-    final int linha;
+    public final TiposToken tipo;
+    public final String lexema;
+    public final Object literal;
+    public final int linha;
 
     public Token(TiposToken tipo, String lexema, Object literal, int linha) {
         this.tipo = tipo;

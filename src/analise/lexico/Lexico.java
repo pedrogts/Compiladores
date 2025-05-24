@@ -1,4 +1,4 @@
-package src.analise.lexico;
+package analise.lexico;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,7 +75,7 @@ public class Lexico {
         while (!terminou()) {
             inicio = atual;
             char c = avancar();
-            
+
             if (c == ' ' || c == '\r' || c == '\t') {
                 continue;
             }

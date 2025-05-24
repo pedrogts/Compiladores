@@ -1,10 +1,10 @@
-package src.analise.lexico;
+package analise.lexico;
 
 import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    String fonte = "int dup num1 << 24; para se entao !>";
+    String fonte = "400 + 300";
     Lexico lexico = new Lexico();
     lexico.defCodFonte(fonte);
     List<Token> tokens = lexico.anLex();
