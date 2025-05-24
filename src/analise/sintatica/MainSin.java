@@ -9,8 +9,7 @@ import java.util.stream.Collectors;
 
 public class MainSin {
     public static void main(String[] args) {
-        String expressao = "1 + 2.5 3 - 3"; // expressao com erro proposital
-
+        String expressao = "1 + 2.5 - 3"; 
         Lexico lexico = new Lexico();
         lexico.defCodFonte(expressao);
         List<Token> tokens = lexico.anLex();
@@ -25,7 +24,7 @@ public class MainSin {
             sintatico.Lst(tiposTokens);
             System.out.println("Análise sintática concluída com sucesso.");
         } catch (RuntimeException e) {
-            System.out.println(e.getMessage()); // apenas a mensagem do erro
+            System.out.println(e.getMessage());
         }
     }
 }
