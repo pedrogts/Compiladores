@@ -16,7 +16,7 @@ public class MainSin {
         Sintatico sintatico = new Sintatico();
 
         try {
-            sintatico.Lst(tokens);
+            sintatico.anSin(tokens);
             System.out.println("Análise sintática concluída com sucesso.");
             System.out.println("Árvore sintática: " + sintatico.arvore);
         } catch (RuntimeException e) {
