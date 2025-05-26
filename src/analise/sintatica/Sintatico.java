@@ -22,7 +22,7 @@ public class Sintatico {
 
     public void anSin(List<Token> tokens) {
         Grammar gramatica = new Grammar();
-        this.arvore = gramatica.Lst(tokens);
+        this.arvore = gramatica.S(tokens);
     }
 
 }

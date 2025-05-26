@@ -6,55 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15ce98a2-5978-4fa4-bd31-e95d9b9b27a5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Lexico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Lexico.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Main.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/TiposToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/TiposToken.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/Token.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/lexico/package.bluej" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/analise.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/lexico/Lexico.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/lexico/Main.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/lexico/TiposToken.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/lexico/Token.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/out/production/analise/analise/lexico/package.bluej" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/MainSin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/NoArvore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/Sintatico$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/Sintatico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/src/analise/semantica/Semantico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/analise.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Lexico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Lexico.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Main.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/TiposToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/TiposToken.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/Token.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/lexico/package.bluej" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/analise/sintatica/Sintatico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/out/production/analise/src/analise/semantica/Semantico.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/Grammar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
