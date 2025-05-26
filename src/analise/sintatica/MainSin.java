@@ -1,30 +1,26 @@
 package analise.sintatica;
 
 import analise.lexico.Lexico;
-import analise.lexico.TiposToken;
 import analise.lexico.Token;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainSin {
     public static void main(String[] args) {
-        String expressao = "1 + 2.5 - 3"; 
+        String expressao = "1 + 2.5 - 3 / 34 * 4";
+
         Lexico lexico = new Lexico();
         lexico.defCodFonte(expressao);
         List<Token> tokens = lexico.anLex();
 
-        List<TiposToken> tiposTokens = tokens.stream()
-                .map(t -> t.tipo)
-                .collect(Collectors.toList());
-
         Sintatico sintatico = new Sintatico();
 
         try {
-            sintatico.Lst(tiposTokens);
+            sintatico.Lst(tokens);
             System.out.println("Análise sintática concluída com sucesso.");
+            System.out.println("Árvore sintática: " + sintatico.arvore);
         } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 }

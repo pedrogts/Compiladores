@@ -1,16 +1,15 @@
 package analise.sintatica;
 
 import analise.lexico.TiposToken;
+import analise.lexico.Token;
+
 import java.util.List;
 
 public class Sintatico {
     public int curPos = 0;
+    public NoArvore arvore;
 
-    public void estadoAnSin(List<TiposToken> tokenLst){
-        System.out.println("[curPos = " + curPos + ", tokenLst = " + tokenLst + "]");
-    }
-
-    public void erroSin(List<TiposToken> tokenLst, int curPos){
+    public void erroSin(List<TiposToken> tokenLst, int curPos) {
         String msg = String.format(
                 "Erro sintático no token de posição %d: encontrado '%s'\nTokens: %s",
                 curPos + 1,
@@ -20,26 +19,72 @@ public class Sintatico {
         throw new RuntimeException(msg);
     }
 
-    public void num(List<TiposToken> tokenLst){
-        if (tokenLst.get(curPos) == TiposToken.DIGITO_INT ||
-                tokenLst.get(curPos) == TiposToken.DIGITO_DUP) {
+    public NoArvore gerarArvMais(NoArvore esquerda, NoArvore direita) {
+        NoArvore no = new NoArvore("+");
+        no.esquerdo = esquerda;
+        no.direito = direita;
+        return no;
+    }
+
+    public NoArvore gerarArvMenos(NoArvore esquerda, NoArvore direita) {
+        NoArvore no = new NoArvore("-");
+        no.esquerdo = esquerda;
+        no.direito = direita;
+        return no;
+    }
+
+    public NoArvore gerarArvMulti(NoArvore esquerda, NoArvore direita) {
+        NoArvore no = new NoArvore("*");
+        no.esquerdo = esquerda;
+        no.direito = direita;
+        return no;
+    }
+
+    public NoArvore gerarArvDiv(NoArvore esquerda, NoArvore direita) {
+        NoArvore no = new NoArvore("/");
+        no.esquerdo = esquerda;
+        no.direito = direita;
+        return no;
+    }
+
+    public NoArvore num(List<Token> tokens) {
+        if (curPos >= tokens.size()) {
+            erroSin(tokens.stream().map(t -> t.tipo).toList(), curPos);
+        }
+        Token tokenAtual = tokens.get(curPos);
+        if (tokenAtual.tipo == TiposToken.DIGITO_INT || tokenAtual.tipo == TiposToken.DIGITO_DUP) {
+            NoArvore no = new NoArvore(tokenAtual.lexema);
             curPos++;
+            return no;
         } else {
-            erroSin(tokenLst, curPos);
+            erroSin(tokens.stream().map(t -> t.tipo).toList(), curPos);
+            return null;
         }
     }
 
-    public void Lst(List<TiposToken> tokenLst) {
-        num(tokenLst);
+    public void Lst(List<Token> tokens) {
+        arvore = num(tokens);
 
-        while (curPos < tokenLst.size() && tokenLst.get(curPos) != TiposToken.EOF) {
-            TiposToken tokenAtual = tokenLst.get(curPos);
+        while (curPos < tokens.size() && tokens.get(curPos).tipo != TiposToken.EOF) {
+            TiposToken tokenAtual = tokens.get(curPos).tipo;
+            curPos++;
+            NoArvore noDireito = num(tokens);
 
-            if (tokenAtual == TiposToken.MAIS || tokenAtual == TiposToken.MENOS) {
-                curPos++;
-                num(tokenLst);
-            } else {
-                erroSin(tokenLst, curPos);
+            switch (tokenAtual) {
+                case MAIS:
+                    arvore = gerarArvMais(arvore, noDireito);
+                    break;
+                case MENOS:
+                    arvore = gerarArvMenos(arvore, noDireito);
+                    break;
+                case MULTI:
+                    arvore = gerarArvMulti(arvore, noDireito);
+                    break;
+                case BARRA:
+                    arvore = gerarArvDiv(arvore, noDireito);
+                    break;
+                default:
+                    erroSin(tokens.stream().map(t -> t.tipo).toList(), curPos);
             }
         }
     }
