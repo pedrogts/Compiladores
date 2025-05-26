@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Grammar
+comment1.params=naoTerminal\ producao
+comment1.target=void\ adicionarProducao(java.lang.String,\ Producoes)
+comment2.params=
+comment2.target=java.util.Map\ getProducoes()
+comment3.params=
+comment3.target=void\ setGrammar()
+comment4.params=
+comment4.target=void\ printGrammar()
+numComments=5

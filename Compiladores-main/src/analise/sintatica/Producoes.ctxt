@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Producoes
+comment1.params=simbolos
+comment1.target=Producoes(java.util.List)
+comment2.params=
+comment2.target=java.util.List\ getProducoes()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
