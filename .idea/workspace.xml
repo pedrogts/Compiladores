@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15ce98a2-5978-4fa4-bd31-e95d9b9b27a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

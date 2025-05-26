@@ -9,6 +9,11 @@ public class Sintatico {
     public int curPos = 0;
     public NoArvore arvore;
 
+    public void estadoAnSin(List<Token> tokens) {
+        List<TiposToken> tokenLst = tokens.stream().map(t -> t.tipo).toList();
+        System.out.println("[curPos = " + curPos + ", tokenLst = " + tokenLst + "]");
+    }
+
     public void erroSin(List<TiposToken> tokenLst, int curPos) {
         String msg = String.format(
                 "Erro sintático no token de posição %d: encontrado '%s'\nTokens: %s",
@@ -88,4 +93,6 @@ public class Sintatico {
             }
         }
     }
+
+    
 }
