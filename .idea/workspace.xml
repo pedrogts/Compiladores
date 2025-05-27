@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15ce98a2-5978-4fa4-bd31-e95d9b9b27a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/Grammar$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/Grammar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/NoArvore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Linguagem_L/analise/sintatica/NoArvore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/analise/sintatica/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/MainSin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/NoArvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/NoArvore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analise/sintatica/Sintatico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
