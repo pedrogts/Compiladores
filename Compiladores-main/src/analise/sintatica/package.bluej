@@ -1,12 +1,12 @@
 #BlueJ package file
-dependency1.from=MainSin
-dependency1.to=Sintatico
+dependency1.from=Grammar
+dependency1.to=Producoes
 dependency1.type=UsesDependency
-dependency2.from=Grammar
-dependency2.to=Producoes
+dependency2.from=MainGramatica
+dependency2.to=Grammar
 dependency2.type=UsesDependency
-dependency3.from=MainGramatica
-dependency3.to=Grammar
+dependency3.from=MainSin
+dependency3.to=Sintatico
 dependency3.type=UsesDependency
 objectbench.height=120
 objectbench.width=1342

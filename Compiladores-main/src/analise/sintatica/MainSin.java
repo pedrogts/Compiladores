@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 
 public class MainSin {
     public static void main(String[] args) {
-        String expressao = "1 + 2.5 - 3"; 
+        String codigoFonte = "metodo principal(): int {  x: int;    x = 5; se (x > 0) {        devolva x;    } senao {        devolva 0;    }} metodo soma(a: int, b: int): int {  devolva a + b;}";
+
+
         Lexico lexico = new Lexico();
-        lexico.defCodFonte(expressao);
+        lexico.defCodFonte(codigoFonte);
         List<Token> tokens = lexico.anLex();
 
         List<TiposToken> tiposTokens = tokens.stream()
@@ -21,7 +23,7 @@ public class MainSin {
         Sintatico sintatico = new Sintatico();
 
         try {
-            sintatico.Lst(tiposTokens);
+            sintatico.S(tiposTokens);
             System.out.println("Analise Sintatica Concluida com sucesso.");
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());

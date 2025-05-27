@@ -40,6 +40,7 @@ public class Lexico {
         palavra_reservada.put("dup", TiposToken.DUP);
         palavra_reservada.put("simbol", TiposToken.CARACTER);
         palavra_reservada.put("booleano", TiposToken.BOOLEANO);
+        palavra_reservada.put("principal", TiposToken.PRINCIPAL);
     }
 
     private List<Token> tokens = new ArrayList<>();
