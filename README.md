@@ -37,4 +37,5 @@ Uma linguagem de programação criada do zero como parte do projeto da disciplin
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/pedrogts/Compiladores.git
+   git clone https://github.com/pedrogts/SistemasOperacionais.git
+
